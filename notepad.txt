@@ -1,0 +1,21 @@
+Patient
+Username : Pankaj
+Password : Patient@123
+3101636264404714
+
+ Doctor 
+Username : Bhaskar
+Password : Doctor@123
+
+Medical 
+Username : Ganesh
+Password : Medical@123
+
+Hospital
+Username : balaji
+Password : Hospital@123
+
+Admin
+Username : admin
+Password : admin[9:07 PM, 12/29/2020] 
+

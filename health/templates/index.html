@@ -1,0 +1,84 @@
+{% extends 'user_navigation.html' %}
+{% load static %}
+{% block body %}
+
+			<!-- /Header -->
+{% if doc %}
+<section class="section section-specialities">
+				<div class="container-fluid">
+					<div class="section-header text-center">
+						<h2 style="color:green;font-family:roman">Searched Doctors</h2><hr>
+<div class="row">
+
+		{% for i in doc %}
+	<div class="col-md-3" style="border:solid 1px lightgray;border-radius:8px">
+								<!-- Doctor Widget -->
+
+								<div class="profile-widget">
+    									<div class="pro-content">
+										<h3 class="title">
+											<a href="doctor-profile.html">Dr.{{i.user.first_name}} {{i.user.last_name}}</a>
+											<i class="fas fa-check-circle verified"></i>
+										</h3>
+										<p class="speciality">{{i.specialist}}</p>
+
+										<ul class="available-info">
+											<li>
+												<i class="fas fa-phone"></i> {{i.mobile}}
+											</li>
+											<li>
+												<i class="fas fa-map-marker-alt"></i> {{i.address}} ,{{i.cl_address}}
+											</li>
+
+											<li>
+												<i class="far fa-clock"></i> Available on {{i.daystiming}},<br> {{i.timing}}
+											</li>
+											<li>
+												<i class="far fa-money-bill-alt"></i> {{i.price}} (Per hour charges)
+												<i class="fas fa-info-circle" data-toggle="tooltip" title="Lorem Ipsum"></i>
+											</li>
+										</ul>
+										<div class="row row-sm">
+											<div class="col-6">
+												<a href="{% url 'login' %}" class="btn view-btn">View Profile</a>
+											</div>
+											<div class="col-6">
+												<a href="{% url 'login' %}" class="btn book-btn">Book Now</a>
+											</div>
+										</div>
+									</div>
+								</div></div>
+								{% endfor %}
+
+</div>
+
+
+
+					</div>
+				</div>
+</section>
+{% else %}
+
+			<!-- Home Banner -->
+			<section class="section section-search">
+				<div class="container-fluid">
+					<div class="banner-wrapper">
+						<div class="banner-header text-center">
+							<h1>MediCover - Book your Appointments Online</h1>
+							<p>Discover the best doctors in the nearest city.</p>
+						</div>
+                         
+						<!-- Search -->
+
+						<!-- /Search -->
+						
+					</div>
+				</div>
+			</section>
+			<!-- /Home Banner -->
+			<!-- Clinic and Specialities -->
+
+			
+		{% endif %}
+			<!-- Footer -->
+{% endblock %}
